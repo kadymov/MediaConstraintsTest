@@ -104,10 +104,6 @@ html, body {
     height: auto;
 }
 
-.mobile .video video {
-    width: 100%;
-}
-
 .mobile .info {
     position: relative;
     width: 100%;
