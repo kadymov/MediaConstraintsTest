@@ -95,13 +95,14 @@ function start(constraints) {
         videoCont.appendChild(video);
         video.autoplay = true;
         video.muted = true;
-        video.src = URL.createObjectURL(stream);
         
         video.onloadeddata = function() {
             var video_height = video.videoHeight,
                 video_width = video.videoWidth;
             log('Video Size: ' + video_width + 'x' + video_height);
         };
+        
+        video.src = URL.createObjectURL(stream);
     }, function(e) {
         log('\nERROR: NavigatorUserMediaError \n--\n{\n  name : ' + 
             e.name + ',\n  message : ' + e.message + '\n};\n--');
