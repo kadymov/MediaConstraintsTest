@@ -4,7 +4,7 @@ window.mobileAndTabletcheck = function() {
   return check;
 };
 
-if (mobileAndTabletcheck() || window.location.search.indexOf('m') !== -1) {
+if (mobileAndTabletcheck()) {
     document.body.classList.add('mobile');
 }
 
