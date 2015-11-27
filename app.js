@@ -64,6 +64,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.mandatory, .optional'),
 });
 
 document.querySelector('#getMediaBtn').addEventListener('click', function() {
+    log('***************************************************');
     var constraints = createConstraints();
     log('        TEST');
     log(new Date().toLocaleString('ru') + '\n');
@@ -81,7 +82,7 @@ document.querySelector('#clsLogBtn').addEventListener('click', function() {
 var videoCont = document.getElementById('videoCont'),
 	video;
 
-function start(constraints) {    
+function start(constraints) {   
     if (video) {
         video.pause();
         video.src=null;
@@ -95,10 +96,14 @@ function start(constraints) {
         video.autoplay = true;
         video.muted = true;
         video.src = URL.createObjectURL(stream);
-        log('***************************************************');
+        
+        video.onloadeddata = function() {
+            var video_height = video.videoHeight,
+                video_width = video.videoWidth;
+            log('Video Size: ' + video_width + 'x' + video_height);
+        };
     }, function(e) {
         log('\nERROR: NavigatorUserMediaError \n--\n{\n  name : ' + 
             e.name + ',\n  message : ' + e.message + '\n};\n--');
-        log('***************************************************');
     });
 }
