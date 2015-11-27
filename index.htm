@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="video" id="videoCont">
+    </div>
+    <div class="info" id="info">
+        <div class="ctrl" id="ctrl">
+            <table class="ctrl-table">
+                <tr><th colspan="4">Mandatory</th></tr>
+                <tr>
+                    <td>Min</td>
+                    <td><input type="text" class="mandatory minWidth" /> x 
+                        <input type="text" class="mandatory minHeight" /></td>
+                    <td>Frame Rate: <input type="text" class="mandatory minFrameRate" /></td>
+                    <td>Aspect ratio: <input type="text" class="mandatory minAspectRatio" /></td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td><input type="text" class="mandatory maxWidth" /> x 
+                        <input type="text" class="mandatory maxHeight" /></td>
+                    <td>Frame Rate: <input type="text" class="mandatory maxFrameRate" /></td>
+                    <td>Aspect ratio: <input type="text" class="mandatory maxAspectRatio" /></td>
+                </tr>
+
+                <tr><th colspan="4">Optional</th></tr>
+                <tr>
+                    <td>Min</td>
+                    <td><input type="text" class="optional minWidth" /> x 
+                        <input type="text" class="optional minHeight" /></td>
+                    <td>Frame Rate: <input type="text" class="optional minFrameRate" /></td>
+                    <td>Aspect ratio: <input type="text" class="optional minAspectRatio" /></td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td><input type="text" class="optional maxWidth" /> x 
+                        <input type="text" class="optional maxHeight" /></td>
+                    <td>Frame Rate: <input type="text" class="optional maxFrameRate" /></td>
+                    <td>Aspect ratio: <input type="text" class="optional maxAspectRatio" /></td>
+                </tr>
+            </table>
+            <input type="button" value="GET MEDIA" class="get-media-btn" id="getMediaBtn"/>
+            <input type="button" value="Clear log" class="cls-log-btn" id="clsLogBtn"/>
+            <div id="log" class="log">*********************** LOG ***********************
+                        Std
+                        ---
+                    1920 x 1080
+                    1280 x 720
+                    960  x 540
+                    640  x 360
+                    480  x 270
+                    320  x 180
+***************************************************</div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

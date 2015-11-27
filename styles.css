@@ -1,0 +1,92 @@
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.video,
+.info {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.video {
+    left: 0;
+    background: #333;
+    overflow: scroll;
+}
+
+.info {
+    left: 50%;
+    overflow-x: auto;
+    background: #eee;
+    border-left: 1px solid #aaa;
+    box-sizing: border-box;
+}
+
+.ctrl {
+    padding: 3px;
+}
+
+.ctrl-table {
+    border: 1px solid #ddd;
+    width: 100%;
+    min-width: 420px;
+}
+
+.ctrl-table th {
+    background: #ddd;
+}
+
+.ctrl-table input[type="text"] {
+    width: 50px;
+}
+
+.get-media-btn {
+    width: 70%;
+    margin-top: 3px;
+    padding: 5px;
+    font-weight: bold;
+    color: green;
+}
+
+.cls-log-btn {
+    width: 30%;
+    margin-top: 3px;
+    margin-left: -3px;
+    padding: 5px;
+    font-weight: bold;
+    color: red;
+}
+
+.log {
+    width: 100%;
+    height: calc(100% - 180px);
+    border-top: 1px solid #aaa;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #ddd;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+    font-weight: bold;
+}
+
+.gray {
+    color: gray;
+}
