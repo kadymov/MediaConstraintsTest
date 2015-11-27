@@ -23,7 +23,7 @@ function log(str) {
 
 function createConstraints() {
     var constraints =  {
-            audio: true,
+            audio: false,
             video: {
                 mandatory: {},
                 optional: []
@@ -93,6 +93,7 @@ function start(constraints) {
         video = document.createElement('video');
         videoCont.appendChild(video);
         video.autoplay = true;
+        video.muted = true;
         video.src = URL.createObjectURL(stream);
         log('***************************************************');
     }, function(e) {
