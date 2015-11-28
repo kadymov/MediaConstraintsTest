@@ -9,7 +9,6 @@ if (mobileAndTabletcheck()) {
 }
 
 
-
 navigator.getUserMedia =
     navigator.getUserMedia ||
     navigator.mozGetUserMedia ||
@@ -52,12 +51,47 @@ function createConstraints() {
         	mandatory[el] = parseFloat(madnVal, 10);
         }
         if (optVal) {
-        	optional.push({el : optVal});
+            var o = {};
+            o[el] = optVal;
+        	optional.push(o);
         }
     });
     
     return constraints;
 }
+
+
+function serializeParams() {
+    var params = JSON.stringify(createConstraints());
+    
+    location.hash = params;
+}
+
+function deserializeParams() {
+    var params = JSON.parse(location.hash.substr(1)),
+        mandatory = params.video.mandatory,
+        optional = params.video.optional;
+    
+    for (var name in mandatory) {
+        if (!mandatory.hasOwnProperty(name)) continue;
+        var el = document.querySelector('.mandatory.' + name);
+        if (el) el.value = mandatory[name];
+    }
+    
+    optional.forEach(function(obj) {
+        for (var name in obj) {
+            if (obj.hasOwnProperty(name)) {
+                var el = document.querySelector('.optional.' + name);
+                if (el) el.value = obj[name];
+                return;
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    deserializeParams();
+});
 
 Array.prototype.forEach.call(document.querySelectorAll('.mandatory, .optional'), function(el) {
     el.addEventListener('keydown', function(e) {
@@ -72,6 +106,10 @@ Array.prototype.forEach.call(document.querySelectorAll('.mandatory, .optional'),
         if ((e.shiftKey || (key < 48 || key > 57)) && (key < 96 || key > 105)) {
             e.preventDefault();
         }
+    });
+    
+    el.addEventListener('keyup', function() {
+        serializeParams();
     });
 });
 
