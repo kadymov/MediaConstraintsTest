@@ -21,6 +21,14 @@ html, body {
     width: calc(100% - 450px);
 }
 
+.stream-info {
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;e;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5)
+}
+
 .info {
     width: 450px;
     right: 0;

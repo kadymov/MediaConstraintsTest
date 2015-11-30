@@ -119,6 +119,8 @@
                 var video_height = video.videoHeight,
                     video_width = video.videoWidth;
                 log('Video Size: ' + video_width + 'x' + video_height);
+                
+                document.querySelector('#streamInfo').innerText = 'Resolution : ' + video_width + 'x' + video_height;
             };
 
             video.src = URL.createObjectURL(stream);
